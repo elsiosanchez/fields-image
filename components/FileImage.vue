@@ -1,19 +1,18 @@
 <template>
   <div class="demo-image">
-    <el-image style="width: 100px; height: 100px" :src="url" :fit="fit" />
+    <el-image :src="url" :fit="fit" />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue';
 const fits = ['fill', 'contain', 'cover', 'none', 'scale-down'];
-const url =
-  'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg';
 
 const props = defineProps({
   src: {
     type: String,
-    required:
+    required: true,
+    default:
       'https://upload.wikimedia.org/wikipedia/commons/b/b1/Adempiere-logo.png',
   },
   fit: {
